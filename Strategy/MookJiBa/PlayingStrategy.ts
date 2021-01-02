@@ -1,3 +1,5 @@
+
+import { HandType } from "./HandType";
 export interface PlayingStrategy {
-    playerNextHand(userHand: string): string;
+    playerNextHand(userHand: HandType): HandType;
 }
