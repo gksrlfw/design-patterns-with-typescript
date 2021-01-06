@@ -1,12 +1,10 @@
-import { time } from "console";
-
 export class Time {
     private hour: number;
     private minute: number;
     private second: number;
     private static timePool: Map<number, Time> = new Map();
 
-    // 생성자 오버로딩 지원 안함..
+    // 생성자 오버로딩 X
     // private constructor(hour: number) { this(hour, 0, 0); }
     // private constructor(hour: number, minute: number) { this(hour, 0, 0); }
     private constructor(hour: number, minute: number, second: number) { 
@@ -19,7 +17,7 @@ export class Time {
     getminute(): number { return this.minute; }
     getsecond(): number { return this.second; }
 
-    // 매개변수가 다른 오버로딩은 지원하지 않는다...
+    // 매개변수 개수가 다른 오버로딩은 지원 X
     // static of(hour: number, minute?: number, second?: number): Time|undefined { return this.of(hour, 0, 0); }
     // static of(hour: number, minute?: number, second?: number): Time|undefined { return this.of(hour, minute, 0); }
     static of(hour: number, minute?: number, second?: number): Time|undefined {
@@ -34,6 +32,6 @@ export class Time {
 
 const hashCode = (s: string): number => {
     return s.split("").reduce(function(a: number, b: string) {
-        a=((a<<5)-a)+b.charCodeAt(0);return a&a
+        a=((a<<5)-a)+b.charCodeAt(0); return a&a
     },0);  
 }
