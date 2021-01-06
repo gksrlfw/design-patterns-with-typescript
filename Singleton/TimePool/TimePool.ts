@@ -6,6 +6,7 @@ export class Time {
     private second: number;
     private static timePool: Map<number, Time> = new Map();
 
+    // 생성자 오버로딩 지원 안함..
     // private constructor(hour: number) { this(hour, 0, 0); }
     // private constructor(hour: number, minute: number) { this(hour, 0, 0); }
     private constructor(hour: number, minute: number, second: number) { 
